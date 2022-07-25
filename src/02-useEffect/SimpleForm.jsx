@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export const SimpleForm = () => {
 
@@ -11,12 +11,29 @@ export const SimpleForm = () => {
 
     const onInputChange = ({ target }) => {
         const { name, value } = target;
-        console.log({ name, value });
+        // console.log({ name, value });
         setFormState({
             ...formState,
-            [ name ]: value
+            [name]: value
         });
     }
+
+    // Si arreglo vació, quiere decir que el useEffect se dispara una sola vez
+    // cuando el componente es montado la primera vez
+    useEffect(() => {
+        console.log('useEffect called');
+    }, [])
+
+    // Efecto que está pendiente del formState
+    useEffect(() => {
+        console.log('formState chaged');
+    }, [formState])
+
+    // Se dispara cuando cambia el email
+    useEffect(() => {
+        console.log('email chaged');
+    }, [email])
+
 
     return (
         <>
@@ -29,7 +46,7 @@ export const SimpleForm = () => {
                 placeholder="Username"
                 name="username"
                 value={username}
-                onChange= { onInputChange }
+                onChange={onInputChange}
             />
 
             <input
@@ -38,7 +55,7 @@ export const SimpleForm = () => {
                 placeholder="adrivegas@mail.com"
                 name="email"
                 value={email}
-                onChange= { onInputChange }
+                onChange={onInputChange}
             />
 
         </>
