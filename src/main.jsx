@@ -13,12 +13,13 @@ import { Padre } from './07-tarea-memo/Padre';
 // import { SimpleForm } from './02-useEffect/SimpleForm';
 // import { HooksApp } from './HooksApp';
 
-import './08-useReducer/intro-reducer';
+// import './08-useReducer/intro-reducer';
+import { TodoApp } from './08-useReducer/TodoApp';
 
 import './index.css'
 
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   // <React.StrictMode>
-//     <Padre />
-//   // </React.StrictMode>
-// )
+ReactDOM.createRoot(document.getElementById('root')).render(
+  // <React.StrictMode>
+    <TodoApp />
+  // </React.StrictMode>
+)
