@@ -22,7 +22,12 @@ export const TodoApp = () => {
     console.log(todos);
 
     const handleNewTodo = ( todo) => {
-        console.log({ todo });
+        const action = {
+            type: '[TODO] Add Todo',
+            payload: todo
+        }
+
+        dispatch|(action);
     }
 
     return (
@@ -47,3 +52,6 @@ export const TodoApp = () => {
         </>
     )
 }
+
+// Creo la acción
+//Se la mando al reducer mediante el dispatch
